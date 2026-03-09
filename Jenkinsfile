@@ -12,7 +12,7 @@ pipeline {
         SECURITY_GROUP   = 'sg-0682c6b797b62d1d8'
         IMAGE_TAG        = "v${BUILD_NUMBER}"
         // Slack or email notification target
-        NOTIFY_CHANNEL   = '#be-exports'
+        NOTIFY_CHANNEL   = '#weekly-test'
     }
 
     options {
