@@ -1,0 +1,240 @@
+2026-03-03 23:08:47,090 [MainThread  ] [WARNI]  Failed to get the checkov mappings and guidelines from https://api0.prismacloud.io/bridgecrew/api/v2/guidelines. Skips using BC_* IDs will not work.
+
+
+
+
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+       _               _
+   ___| |__   ___  ___| | _______   __
+  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+ | (__| | | |  __/ (__|   < (_) \ V /
+  \___|_| |_|\___|\___|_|\_\___/ \_/
+
+By Prisma Cloud | version: 3.2.506 
+
+terraform scan results:
+
+Passed checks: 63, Failed checks: 6, Skipped checks: 0
+
+Check: CKV_AWS_93: "Ensure S3 bucket policy does not lockout all but root user. (Prevent lockouts needing root account fixes)"
+	PASSED for resource: aws_s3_bucket.export_data
+	File: /main.tf:42-46
+Check: CKV_AWS_300: "Ensure S3 lifecycle configuration sets period for aborting failed uploads"
+	PASSED for resource: aws_s3_bucket_lifecycle_configuration.export_data
+	File: /main.tf:53-67
+Check: CKV_AWS_54: "Ensure S3 bucket has block public policy enabled"
+	PASSED for resource: aws_s3_bucket_public_access_block.export_data
+	File: /main.tf:77-83
+Check: CKV_AWS_56: "Ensure S3 bucket has 'restrict_public_buckets' enabled"
+	PASSED for resource: aws_s3_bucket_public_access_block.export_data
+	File: /main.tf:77-83
+Check: CKV_AWS_55: "Ensure S3 bucket has ignore public ACLs enabled"
+	PASSED for resource: aws_s3_bucket_public_access_block.export_data
+	File: /main.tf:77-83
+Check: CKV_AWS_53: "Ensure S3 bucket has block public ACLS enabled"
+	PASSED for resource: aws_s3_bucket_public_access_block.export_data
+	File: /main.tf:77-83
+Check: CKV_AWS_93: "Ensure S3 bucket policy does not lockout all but root user. (Prevent lockouts needing root account fixes)"
+	PASSED for resource: aws_s3_bucket.access_logs
+	File: /main.tf:86-89
+Check: CKV_AWS_54: "Ensure S3 bucket has block public policy enabled"
+	PASSED for resource: aws_s3_bucket_public_access_block.access_logs
+	File: /main.tf:91-97
+Check: CKV_AWS_56: "Ensure S3 bucket has 'restrict_public_buckets' enabled"
+	PASSED for resource: aws_s3_bucket_public_access_block.access_logs
+	File: /main.tf:91-97
+Check: CKV_AWS_55: "Ensure S3 bucket has ignore public ACLs enabled"
+	PASSED for resource: aws_s3_bucket_public_access_block.access_logs
+	File: /main.tf:91-97
+Check: CKV_AWS_53: "Ensure S3 bucket has block public ACLS enabled"
+	PASSED for resource: aws_s3_bucket_public_access_block.access_logs
+	File: /main.tf:91-97
+Check: CKV_AWS_300: "Ensure S3 lifecycle configuration sets period for aborting failed uploads"
+	PASSED for resource: aws_s3_bucket_lifecycle_configuration.access_logs
+	File: /main.tf:112-121
+Check: CKV_AWS_51: "Ensure ECR Image Tags are immutable"
+	PASSED for resource: aws_ecr_repository.export_runner
+	File: /main.tf:132-146
+Check: CKV_AWS_163: "Ensure ECR image scanning on push is enabled"
+	PASSED for resource: aws_ecr_repository.export_runner
+	File: /main.tf:132-146
+Check: CKV_AWS_136: "Ensure that ECR repositories are encrypted using KMS"
+	PASSED for resource: aws_ecr_repository.export_runner
+	File: /main.tf:132-146
+Check: CKV_AWS_227: "Ensure KMS key is enabled"
+	PASSED for resource: aws_kms_key.cloudwatch
+	File: /main.tf:170-207
+Check: CKV_AWS_33: "Ensure KMS key policy does not contain wildcard (*) principal"
+	PASSED for resource: aws_kms_key.cloudwatch
+	File: /main.tf:170-207
+Check: CKV_AWS_7: "Ensure rotation for customer created CMKs is enabled"
+	PASSED for resource: aws_kms_key.cloudwatch
+	File: /main.tf:170-207
+Check: CKV_AWS_66: "Ensure that CloudWatch Log Group specifies retention days"
+	PASSED for resource: aws_cloudwatch_log_group.export_runner
+	File: /main.tf:217-223
+Check: CKV_AWS_338: "Ensure CloudWatch log groups retains logs for at least 1 year"
+	PASSED for resource: aws_cloudwatch_log_group.export_runner
+	File: /main.tf:217-223
+Check: CKV_AWS_158: "Ensure that CloudWatch Log Group is encrypted by KMS"
+	PASSED for resource: aws_cloudwatch_log_group.export_runner
+	File: /main.tf:217-223
+Check: CKV_AWS_61: "Ensure AWS IAM policy does not allow assume role permission across all services"
+	PASSED for resource: aws_iam_role.ecs_execution_role
+	File: /main.tf:228-239
+Check: CKV_AWS_274: "Disallow IAM roles, users, and groups from using the AWS AdministratorAccess policy"
+	PASSED for resource: aws_iam_role.ecs_execution_role
+	File: /main.tf:228-239
+Check: CKV_AWS_60: "Ensure IAM role allows only specific services or principals to assume it"
+	PASSED for resource: aws_iam_role.ecs_execution_role
+	File: /main.tf:228-239
+Check: CKV_AWS_274: "Disallow IAM roles, users, and groups from using the AWS AdministratorAccess policy"
+	PASSED for resource: aws_iam_role_policy_attachment.ecs_execution_managed
+	File: /main.tf:241-244
+Check: CKV_AWS_61: "Ensure AWS IAM policy does not allow assume role permission across all services"
+	PASSED for resource: aws_iam_role.ecs_task_role
+	File: /main.tf:249-260
+Check: CKV_AWS_274: "Disallow IAM roles, users, and groups from using the AWS AdministratorAccess policy"
+	PASSED for resource: aws_iam_role.ecs_task_role
+	File: /main.tf:249-260
+Check: CKV_AWS_60: "Ensure IAM role allows only specific services or principals to assume it"
+	PASSED for resource: aws_iam_role.ecs_task_role
+	File: /main.tf:249-260
+Check: CKV_AWS_63: "Ensure no IAM policies documents allow "*" as a statement's actions"
+	PASSED for resource: aws_iam_role_policy.task_s3_access
+	File: /main.tf:262-284
+Check: CKV_AWS_62: "Ensure IAM policies that allow full "*-*" administrative privileges are not created"
+	PASSED for resource: aws_iam_role_policy.task_s3_access
+	File: /main.tf:262-284
+Check: CKV_AWS_223: "Ensure ECS Cluster enables logging of ECS Exec"
+	PASSED for resource: aws_ecs_cluster.export
+	File: /main.tf:289-298
+Check: CKV_AWS_65: "Ensure container insights are enabled on ECS cluster"
+	PASSED for resource: aws_ecs_cluster.export
+	File: /main.tf:289-298
+Check: CKV_AWS_334: "Ensure ECS containers should run as non-privileged"
+	PASSED for resource: aws_ecs_task_definition.export_runner
+	File: /main.tf:303-352
+Check: CKV_AWS_249: "Ensure that the Execution Role ARN and the Task Role ARN are different in ECS Task definitions"
+	PASSED for resource: aws_ecs_task_definition.export_runner
+	File: /main.tf:303-352
+Check: CKV_AWS_335: "Ensure ECS task definitions should not share the host's process namespace"
+	PASSED for resource: aws_ecs_task_definition.export_runner
+	File: /main.tf:303-352
+Check: CKV_AWS_97: "Ensure Encryption in transit is enabled for EFS volumes in ECS Task definitions"
+	PASSED for resource: aws_ecs_task_definition.export_runner
+	File: /main.tf:303-352
+Check: CKV_AWS_336: "Ensure ECS containers are limited to read-only access to root filesystems"
+	PASSED for resource: aws_ecs_task_definition.export_runner
+	File: /main.tf:303-352
+Check: CKV_AWS_277: "Ensure no security groups allow ingress from 0.0.0.0:0 to port -1"
+	PASSED for resource: aws_security_group.fargate_task
+	File: /main.tf:357-373
+Check: CKV_AWS_260: "Ensure no security groups allow ingress from 0.0.0.0:0 to port 80"
+	PASSED for resource: aws_security_group.fargate_task
+	File: /main.tf:357-373
+Check: CKV_AWS_25: "Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389"
+	PASSED for resource: aws_security_group.fargate_task
+	File: /main.tf:357-373
+Check: CKV_AWS_24: "Ensure no security groups allow ingress from 0.0.0.0:0 to port 22"
+	PASSED for resource: aws_security_group.fargate_task
+	File: /main.tf:357-373
+Check: CKV_AWS_23: "Ensure every security group and rule has a description"
+	PASSED for resource: aws_security_group.fargate_task
+	File: /main.tf:357-373
+Check: CKV_AWS_41: "Ensure no hard coded AWS access key and secret key exists in provider"
+	PASSED for resource: aws.default
+	File: /main.tf:20-31
+Check: CKV2_AWS_56: "Ensure AWS Managed IAMFullAccess IAM policy is not used."
+	PASSED for resource: aws_iam_role.ecs_execution_role
+	File: /main.tf:228-239
+Check: CKV2_AWS_56: "Ensure AWS Managed IAMFullAccess IAM policy is not used."
+	PASSED for resource: aws_iam_role_policy_attachment.ecs_execution_managed
+	File: /main.tf:241-244
+Check: CKV2_AWS_56: "Ensure AWS Managed IAMFullAccess IAM policy is not used."
+	PASSED for resource: aws_iam_role.ecs_task_role
+	File: /main.tf:249-260
+Check: CKV2_AWS_61: "Ensure that an S3 bucket has a lifecycle configuration"
+	PASSED for resource: aws_s3_bucket.export_data
+	File: /main.tf:42-46
+Check: CKV2_AWS_61: "Ensure that an S3 bucket has a lifecycle configuration"
+	PASSED for resource: aws_s3_bucket.access_logs
+	File: /main.tf:86-89
+Check: CKV_AWS_18: "Ensure the S3 bucket has access logging enabled"
+	PASSED for resource: aws_s3_bucket.export_data
+	File: /main.tf:42-46
+Check: CKV_AWS_18: "Ensure the S3 bucket has access logging enabled"
+	PASSED for resource: aws_s3_bucket.access_logs
+	File: /main.tf:86-89
+Check: CKV_AWS_57: "S3 Bucket has an ACL defined which allows public WRITE access."
+	PASSED for resource: aws_s3_bucket.export_data
+	File: /main.tf:42-46
+Check: CKV_AWS_57: "S3 Bucket has an ACL defined which allows public WRITE access."
+	PASSED for resource: aws_s3_bucket.access_logs
+	File: /main.tf:86-89
+Check: CKV2_AWS_6: "Ensure that S3 bucket has a Public Access block"
+	PASSED for resource: aws_s3_bucket.export_data
+	File: /main.tf:42-46
+Check: CKV2_AWS_6: "Ensure that S3 bucket has a Public Access block"
+	PASSED for resource: aws_s3_bucket.access_logs
+	File: /main.tf:86-89
+Check: CKV_AWS_20: "S3 Bucket has an ACL defined which allows public READ access."
+	PASSED for resource: aws_s3_bucket.export_data
+	File: /main.tf:42-46
+Check: CKV_AWS_20: "S3 Bucket has an ACL defined which allows public READ access."
+	PASSED for resource: aws_s3_bucket.access_logs
+	File: /main.tf:86-89
+Check: CKV_AWS_145: "Ensure that S3 buckets are encrypted with KMS by default"
+	PASSED for resource: aws_s3_bucket.export_data
+	File: /main.tf:42-46
+Check: CKV_AWS_145: "Ensure that S3 buckets are encrypted with KMS by default"
+	PASSED for resource: aws_s3_bucket.access_logs
+	File: /main.tf:86-89
+Check: CKV2_AWS_64: "Ensure KMS key Policy is defined"
+	PASSED for resource: aws_kms_key.cloudwatch
+	File: /main.tf:170-207
+Check: CKV_AWS_21: "Ensure all data stored in the S3 bucket have versioning enabled"
+	PASSED for resource: aws_s3_bucket.export_data
+	File: /main.tf:42-46
+Check: CKV_AWS_21: "Ensure all data stored in the S3 bucket have versioning enabled"
+	PASSED for resource: aws_s3_bucket.access_logs
+	File: /main.tf:86-89
+Check: CKV_AWS_19: "Ensure all data stored in the S3 bucket is securely encrypted at rest"
+	PASSED for resource: aws_s3_bucket.export_data
+	File: /main.tf:42-46
+Check: CKV_AWS_19: "Ensure all data stored in the S3 bucket is securely encrypted at rest"
+	PASSED for resource: aws_s3_bucket.access_logs
+	File: /main.tf:86-89
+Check: CKV_AWS_382: "Ensure no security groups allow egress from 0.0.0.0:0 to port -1"
+	FAILED for resource: aws_security_group.fargate_task
+	File: /main.tf:357-373
+Check: CKV2_AWS_62: "Ensure S3 buckets should have event notifications enabled"
+	FAILED for resource: aws_s3_bucket.export_data
+	File: /main.tf:42-46
+Check: CKV2_AWS_62: "Ensure S3 buckets should have event notifications enabled"
+	FAILED for resource: aws_s3_bucket.access_logs
+	File: /main.tf:86-89
+Check: CKV2_AWS_5: "Ensure that Security Groups are attached to another resource"
+	FAILED for resource: aws_security_group.fargate_task
+	File: /main.tf:357-373
+Check: CKV_AWS_144: "Ensure that S3 bucket has cross-region replication enabled"
+	FAILED for resource: aws_s3_bucket.export_data
+	File: /main.tf:42-46
+Check: CKV_AWS_144: "Ensure that S3 bucket has cross-region replication enabled"
+	FAILED for resource: aws_s3_bucket.access_logs
+	File: /main.tf:86-89
+
+---
+Audit Date: 2026-03-03T23:08:48Z
+Audited By: Ibrahim Jalloh (Solution Architect)
